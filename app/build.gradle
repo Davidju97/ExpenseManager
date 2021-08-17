@@ -1,5 +1,18 @@
+
+plugins {
+    id "org.sonarqube" version "3.3"
+}
 apply plugin: 'com.android.application'
-apply plugin: "org.sonarqube"
+apply plugin: 'org.sonarqube'
+
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "Davidju97_ExpenseManager"
+        property "sonar.organization", "davidju97"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
 
 android {
     compileSdkVersion 29
@@ -28,7 +41,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'org.quanqi:android-holo-graph:0.1.0'
     implementation 'joda-time:joda-time:2.8.2'
@@ -43,3 +56,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0'
 }
+
+
