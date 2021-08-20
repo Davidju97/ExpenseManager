@@ -19,7 +19,7 @@ public class CategoryPresenter {
       view.displayError();
       return false;
     }
-//check
+//check//
     database.addExpenseType(new ExpenseType(newCategory));
     return true;
   }
